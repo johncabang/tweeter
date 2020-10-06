@@ -1,17 +1,17 @@
 article {
   border: 4px solid #545149;
-  overflow: auto;
   margin-top: 2em;
   margin-bottom: 2em;
+  overflow: auto;
 }
 article footer {
   padding: 0.5em;
   margin: 2%;
   border: none;
   border-top: 4px solid #545149;
-  overflow: auto;
   display: flex;
   justify-content: space-between;
+  overflow: auto;
 }
 
 article span {
@@ -34,8 +34,8 @@ article img {
 }
 
 p {
-  font-size: 18px;
   margin: 18px;
+  font-size: 18px;
 }
 
 footer p {
@@ -46,9 +46,9 @@ footer p {
 }
 
 footer img {
+  display: flex;
   height: 20px;
   padding: 3px;
-  display: flex;
 }
 
 article:hover {
