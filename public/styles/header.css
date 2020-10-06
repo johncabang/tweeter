@@ -1,0 +1,11 @@
+.profile {
+  height: 400px;
+  width: 100%;
+  text-align: center;
+  background-color: #acad9b;
+  background-image: url("https://transparenttextures.com/patterns/45-degree-fabric-light.png");
+}
+
+.avatar h2 {
+  position: relative;
+}

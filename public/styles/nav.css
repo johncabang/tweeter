@@ -1,0 +1,30 @@
+nav {
+  background-color: #4056A1;
+  color: #FFF;
+  padding: 1.5em;
+  height: 120px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.logo {
+  font-family: 'Bungee', sans-serif;
+}
+
+.new-tweet-nav {
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  float: right;
+}
+
+.chevron img {
+  height: 0.8em;
+}
