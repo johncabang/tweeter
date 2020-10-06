@@ -1,14 +1,16 @@
 article {
-  border: 4px solid #545149;
-  margin-top: 2em;
+  /* Display */
+  margin-top: 1em;
   margin-bottom: 2em;
+  border: 4px solid #545149;
   overflow: auto;
 }
 article footer {
-  padding: 0.5em;
+  /* Display */
   margin: 2%;
   border: none;
   border-top: 4px solid #545149;
+  padding: 0.5em;
   display: flex;
   justify-content: space-between;
   overflow: auto;
@@ -16,44 +18,63 @@ article footer {
 
 article span {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
 
-article .tweeter-user {
+/* article .tweeter-user {
   margin-left: 5px;
-}
+} */
+
+/* .tweeter-handle {
+  color: #a4acc7;
+} */
 
 article div {
+  /* Text */
+  font-size: 14px;
+  /* Display */
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  align-items: center;
+  padding-right: 10px;
+}
+
+div p {
+  display: flex;
+
 }
 
 article img {
-  height: 80px;
   padding: 10px;
-}
-
-.tweeter-handle {
-  color: #a4acc7;
+  height: 80px;
 }
 
 p {
-  margin: 18px;
+  /* Text */
   font-size: 18px;
+  /* Display */
+  margin: 18px;
 }
 
 footer p {
+  /* Text */
+  font-size: 14px;
+  /* Display */
   margin: 0;
   padding-left: 0;
   padding-right: 0;
-  font-size: 14px;
 }
 
 footer img {
+  /* Display */
+  padding: 3px;
   display: flex;
   height: 20px;
-  padding: 3px;
 }
+
+/* Hover state */
 
 article:hover {
   box-shadow: 8px 10px #a4acc7;

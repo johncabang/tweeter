@@ -1,13 +1,16 @@
 .profile {
+  /* Display */
+  padding-top: 10px;
   height: 400px;
   width: 100%;
-  padding-top: 10px;
   text-align: center;
+  /* Color */
   background-color: #a4acc7;
   background-image: url("https://transparenttextures.com/patterns/45-degree-fabric-light.png");
 }
 
 .avatar .profile-name {
+  /* Display */
   margin-top: 0;
   text-align: center;
 }

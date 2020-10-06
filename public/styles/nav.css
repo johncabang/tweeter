@@ -1,14 +1,17 @@
 nav {
+  /* Color */
   background-color: #4056A1;
   color: #FFF;
+  /* Display */
   padding: 1.5em;
   height: 120px;
+  width: 100%;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  /* Positioning */
   position: fixed;
   top: 0;
-  width: 100%;
 }
 
 a {
@@ -21,7 +24,9 @@ a {
 }
 
 .new-tweet-nav {
+  /* Text */
   font-family: 'Source Sans Pro', sans-serif;
+  /* Display */
   display: flex;
   flex-direction: column;
   align-items: center;
