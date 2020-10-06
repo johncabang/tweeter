@@ -7,6 +7,7 @@
   background-image: url("https://transparenttextures.com/patterns/45-degree-fabric-light.png");
 }
 
-.avatar h2 {
-  position: relative;
+.avatar .profile-name {
+  margin-top: 0;
+  text-align: center;
 }

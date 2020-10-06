@@ -18,6 +18,10 @@ article span {
   display: flex;
 }
 
+article .tweeter-user {
+  margin-left: 5px;
+}
+
 article div {
   display: flex;
   justify-content: space-between;
