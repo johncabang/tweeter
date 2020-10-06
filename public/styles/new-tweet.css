@@ -14,12 +14,14 @@ textarea {
   background: transparent;
   outline: none;
   border: none;
+  resize: none;
   border-bottom: solid 5px #545149;
   margin-top: 1em;
   width: 100%;
   height: 40px;
   color: #545149;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 button {
