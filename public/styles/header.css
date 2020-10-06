@@ -1,8 +1,9 @@
 .profile {
   height: 400px;
   width: 100%;
+  padding-top: 10px;
   text-align: center;
-  background-color: #acad9b;
+  background-color: #a4acc7;
   background-image: url("https://transparenttextures.com/patterns/45-degree-fabric-light.png");
 }
 
