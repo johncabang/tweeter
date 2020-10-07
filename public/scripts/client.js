@@ -78,10 +78,10 @@ const tweetData = [
   renderTweets(tweetData);
   
   
+  // Submit form using AJAX
 
-
-  $('#tweet-text').on('submit', function(event) {
-    event.preventDefault(); // Stops the default action of the element
+  $('form').on('submit', function(event) {
+    event.preventDefault(); // Stops the default action of the element 'submit'
   
     $.ajax({ 
       url: '/tweets/',
