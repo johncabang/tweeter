@@ -29,6 +29,48 @@
 $(document).ready(function() {
 
 
+
+  // Fake data taken from initial-tweets.json
+
+const tweetData = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  }
+]
+
+
+// Take in array of tweet objects of (tweetData), and insert it in #tweets-container inside the <section> HTML element
+
+  const renderTweets = function(tweets) {
+    for (let tweet of tweets) {
+      console.log(tweet);
+      console.log(createTweetElement(tweet));
+      $('#tweets-container').append(createTweetElement(tweet));
+    }
+  };
+
+
+// Take in a tweet object, return a tweet <article> element containing HTML structure of the tweet
+
   const createTweetElement = function(tweetData) {
     let $tweet = $(`
     <article>
@@ -55,25 +97,27 @@ $(document).ready(function() {
     return $tweet;
   };
 
+  renderTweets(tweetData);
 
 
-// Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
-}
+// // Test / driver code (temporary). Eventually will get this from the server.
+// const tweetData = {
+//   "user": {
+//     "name": "Newton",
+//     "avatars": "https://i.imgur.com/73hZDYK.png",
+//       "handle": "@SirIsaac"
+//     },
+//   "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//   "created_at": 1461116232227
+// }
 
-const $tweet = createTweetElement(tweetData);
+// const $tweet = createTweetElement(tweetData);
 
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+// // Test / driver code (temporary)
+// console.log($tweet); // to see what it looks like
+// $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+
 
 });
