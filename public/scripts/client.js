@@ -4,30 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-/* <article>
-<header class="tweet-head">
-  <div>
-    <span>
-    <img src="/images/mcfly.png">
-    Marty McFly
-    </span>
-    @McFlyMarty
-  </div>
-</header>
-<p>Hey, McFly, I thought I told you never to come in here. Well it's gonna cost you. How much money you got on you?Hey, McFly, I thought I told you never to come in here. Well it's gonna cost you. How much money you got on you?Hey, McFly, I thought I told you never to come in here. Well it's gonna cost you. How much money you got on you?Hey, McFly, I thought I told you never to come in here.</p>
-<footer>
-  <p class="tweeter-days">10 Days Ago</p>
-  <div class="tweeter-icons">
-    <img src="/images/icons8-flag.png">
-    <img src="/images/icons8-like.png">
-    <img src="/images/icons8-retweet.png">
-  </div>
-</footer>
-</article> */
-
 
 $(document).ready(function() {
-
 
 
   // Fake data taken from initial-tweets.json
@@ -62,8 +40,8 @@ const tweetData = [
 
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
-      console.log(tweet);
-      console.log(createTweetElement(tweet));
+      // console.log(tweet);
+      // console.log(createTweetElement(tweet));
       $('#tweets-container').append(createTweetElement(tweet));
     }
   };
@@ -98,26 +76,25 @@ const tweetData = [
   };
 
   renderTweets(tweetData);
+  
+  
 
 
-// // Test / driver code (temporary). Eventually will get this from the server.
-// const tweetData = {
-//   "user": {
-//     "name": "Newton",
-//     "avatars": "https://i.imgur.com/73hZDYK.png",
-//       "handle": "@SirIsaac"
-//     },
-//   "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//   "created_at": 1461116232227
-// }
+  $('#tweet-text').on('submit', function(event) {
+    event.preventDefault(); // Stops the default action of the element
+  
+    $.ajax({ 
+      url: '/tweets/',
+      method: 'POST', 
+      data: $(this).serialize() // Turns the form data into a query string
+    })
+    .then(function() {
+      console.log('Success');
+    });
 
-// const $tweet = createTweetElement(tweetData);
+  })
 
-// // Test / driver code (temporary)
-// console.log($tweet); // to see what it looks like
-// $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+
 
 
 });
