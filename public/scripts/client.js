@@ -33,7 +33,7 @@ $(document).ready(function() {
       </header class="tweet-head">
       <p>${escape(tweetData.content.text)}</p>
       <footer>
-        <p class="tweeter-days">${new Date(tweetData.created_at).toLocaleString()}</p>
+        <p class="tweeter-days">${moment(tweetData.created_at).fromNow()}</p>
         <div class="tweeter-icons">
           <img src="/images/icons8-flag.png">
           <img src="/images/icons8-like.png">
