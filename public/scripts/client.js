@@ -7,7 +7,11 @@
 
 $(document).ready(function() {
 
-
+  const escape = function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
   
   // Take in a tweet object, return a tweet <article> element containing HTML structure of the tweet
 
@@ -23,7 +27,7 @@ $(document).ready(function() {
           ${tweetData.user.handle}
         </div>
       </header class="tweet-head">
-      <p>${tweetData.content.text}</p>
+      <p>${escape(tweetData.content.text)}</p>
       <footer>
         <p class="tweeter-days">10 Days Ago</p>
         <div class="tweeter-icons">
