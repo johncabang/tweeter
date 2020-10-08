@@ -79,13 +79,15 @@ $(document).ready(function() {
     const tweetData = $('#textarea-tweet').val();
 
     if (tweetData.length === 0) {
+      $('.error-message').empty();
       $('.error-message').slideDown('slow', function() {
-        $('.error-message').html(`<img src="/images/icons8-error.png"> Empty tweet?  Please share your thoughts! <img src="/images/icons8-error.png">`);
+        $('.error-message').html(`<img src="/images/icons8-error.png"> Empty tweet? Please share your thoughts! <img src="/images/icons8-error.png">`);
         $('.error-message').delay(4000).slideUp(500);
       });
     } else if (tweetData.length > 140) {
+      $('.error-message').empty();
       $('.error-message').slideDown('slow', function() {
-        $('.error-message').html(`<img src="/images/icons8-error.png"> Sorry, maximum character limit exceeded.. <img src="/images/icons8-error.png">`);
+        $('.error-message').html(`<img src="/images/icons8-error.png"> Sorry, maximum character limit exceeded. <img src="/images/icons8-error.png">`);
         $('.error-message').delay(4000).slideUp(500);
 
         $('#textarea-tweet').val('');          // Clears textarea
