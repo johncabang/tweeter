@@ -11,7 +11,7 @@ $(document).ready(function() {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
   
   // Take in a tweet object, return a tweet <article> element containing HTML structure of the tweet
 
@@ -79,10 +79,16 @@ $(document).ready(function() {
     if (tweetData.length === 0) {
       $('.error-message').slideDown('slow', function() {
         $('.error-message').html(`<img src="/images/icons8-error.png"> Empty tweet?  Please share your thoughts! <img src="/images/icons8-error.png">`);
+        $('.error-message').delay(4000).slideUp(500);
       });
     } else if (tweetData.length > 140) {
       $('.error-message').slideDown('slow', function() {
         $('.error-message').html(`<img src="/images/icons8-error.png"> Sorry, maximum character limit exceeded.. <img src="/images/icons8-error.png">`);
+        $('.error-message').delay(4000).slideUp(500);
+
+        $('#textarea-tweet').val('');          // Clears textarea
+        $('.counter').text(140);               // Resets counter
+        $('.counter').css("color", "#545149"); // Returns counter color to default
       });
     } else {
       $('.error-message').slideUp('slow');
@@ -93,17 +99,16 @@ $(document).ready(function() {
       })
         .then(function() {
           console.log('Success');
-          $('#textarea-tweet').val(''); // Clears textarea
-          $('.counter').text(140);      // Resets counter
+          $('#textarea-tweet').val('');   // Clears textarea
+          $('.counter').text(140);        // Resets counter
           loadTweets();
           $('.new-tweet').slideToggle();
-      });
+        });
     }
   });
 
   $('.new-tweet-nav').on('click', function() {
     $('.new-tweet').slideToggle();
-  })
-
+  });
 
 });

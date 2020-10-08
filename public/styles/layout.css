@@ -26,7 +26,56 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-main {
-  width: 90%;
-  margin: auto;
+ main {
+   width: 90%;
+   margin: auto;
+   padding: 40px;
+ }
+
+
+
+@media only screen and (min-width: 768px) {
+
+  body {
+    display: flex;
+  }
+
+  .profile {
+    /* Display */
+    width: 100%;
+    padding-top: 10px;
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+
+  .container {
+    /* width: 80%; */
+    padding: 40px;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+  .nav-top {
+    padding-top: 0.5em;
+    background-color: #a4acc7;
+    background-image: url("https://transparenttextures.com/patterns/45-degree-fabric-light.png");
+  }
+
+  .container {
+    padding-top: 0;
+  }
+
+ .responsive {
+    width: 30%;
+  }
+
+  .profile-name {
+    font-size: 5vw;
+  }
+
+
 }

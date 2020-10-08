@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
@@ -26,7 +28,7 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav class="nav-top">
       <span class="logo">tweeter</span>
       <div class="new-tweet-nav">
         <a href="#"><strong>Write</strong> a new tweet</a>
@@ -37,7 +39,7 @@
     <header class="profile">
       <div class="profile-background">
         <div class="avatar">
-          <img src="/images/profile-hex.png">
+          <img class="responsive" src="/images/profile-hex.png">
           <br>
           <h2 class="profile-name"><strong>Marty</strong> McFly</h2>
         </div>
@@ -50,7 +52,6 @@
       <section class="new-tweet">
         <!-- Error message -->
         <span class="error-message"></span>
-        <!-- Create new tweet -->
         <form action="/tweets/" method="POST" id="tweet-text">
           <label class="label-tweet" for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="textarea-tweet"></textarea>
@@ -60,10 +61,8 @@
           </span>
         </form>
       </section>
-
-      <section id="tweets-container">
-        
-      </section>
+      
+      <section id="tweets-container"></section>
 
     </main>
   </body>

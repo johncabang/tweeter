@@ -1,8 +1,4 @@
 .new-tweet {
-  /* Display */
-  padding-top: 1em;
-  /* Text */
-  /* font-family: 'Bungee', sans-serif; */
   display: none;
 }
 
@@ -80,4 +76,3 @@ button {
   padding: 5px;
   align-items: center;
 }
-
