@@ -1,3 +1,5 @@
+// Character count/countdown display
+
 $(document).ready(function() {
   $('#textarea-tweet').keyup(function() {
     let counter = 140;

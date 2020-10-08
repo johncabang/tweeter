@@ -8,7 +8,7 @@
 $(document).ready(function() {
 
   
-  // Function in preventing XSS attacks/unwanted code injection  
+  // Function in preventing XSS attacks/unwanted code injection
 
   const escape = function(str) {
     let div = document.createElement('div');
@@ -71,7 +71,7 @@ $(document).ready(function() {
   loadTweets();
   
 
-  // Compose and submit a tweet less than or equal to 140 characters. Returns an error when more than 140 characters or an empty value 
+  // Compose and submit a tweet less than or equal to 140 characters. Returns an error when more than 140 characters or an empty value
 
   $('form').on('submit', function(event) {
     event.preventDefault();           // Stops the default action of the element 'submit'
