@@ -7,13 +7,17 @@
 
 $(document).ready(function() {
 
+  
+  // Function in preventing XSS attacks/unwanted code injection  
+
   const escape = function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
   
-  // Take in a tweet object, return a tweet <article> element containing HTML structure of the tweet
+
+  // Takes in a tweet object, return a tweet <article> element containing HTML structure of the tweet
 
   const createTweetElement = function(tweetData) {
     let $tweet = $(`
@@ -42,12 +46,11 @@ $(document).ready(function() {
   };
 
 
-  // Take in array of tweet objects of (tweetData), and insert it in #tweets-container inside the <section> HTML element
+  // Function, empties element, then takes in an array of tweet objects of (tweetData), and insert it in #tweets-container inside the <section> HTML element
 
   const renderTweets = function(tweets) {
+    $('#tweets-container').empty();
     for (let tweet of tweets) {
-      // console.log(tweet);
-      // console.log(createTweetElement(tweet));
       $('#tweets-container').prepend(createTweetElement(tweet));
     }
   };
@@ -62,17 +65,16 @@ $(document).ready(function() {
     })
       .then(function(twts) {
         renderTweets(twts);
-        console.log('loadTweets!');
       });
   };
 
   loadTweets();
   
 
-  // Submit form using AJAX
+  // Compose and submit a tweet less than or equal to 140 characters. Returns an error when more than 140 characters or an empty value 
 
   $('form').on('submit', function(event) {
-    event.preventDefault(); // Stops the default action of the element 'submit'
+    event.preventDefault();           // Stops the default action of the element 'submit'
     const data = $(this).serialize(); // Turns the form data into a query string
     const tweetData = $('#textarea-tweet').val();
 
@@ -98,7 +100,6 @@ $(document).ready(function() {
         data
       })
         .then(function() {
-          console.log('Success');
           $('#textarea-tweet').val('');   // Clears textarea
           $('.counter').text(140);        // Resets counter
           loadTweets();
@@ -106,6 +107,9 @@ $(document).ready(function() {
         });
     }
   });
+
+
+  // Compose a tweet toggle
 
   $('.new-tweet-nav').on('click', function() {
     $('.new-tweet').slideToggle();

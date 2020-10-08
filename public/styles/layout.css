@@ -3,6 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
 html {
   box-sizing: border-box;
 }
@@ -26,16 +27,14 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main {
-   width: 90%;
-   margin: auto;
-   padding: 40px;
- }
+main {
+  width: 90%;
+  margin: auto;
+  padding: 40px;
+}
 
-
-
+/* Laptops / Desktops: minimum width of 1024px */
 @media only screen and (min-width: 768px) {
-
   body {
     display: flex;
   }
@@ -52,13 +51,10 @@ body {
     /* width: 80%; */
     padding: 40px;
   }
-
 }
 
-
-
+/* Another tablet breakpoint is minimum width of 768px */
 @media only screen and (max-width: 768px) {
-
   .nav-top {
     padding-top: 0.5em;
     background-color: #a4acc7;
@@ -76,6 +72,4 @@ body {
   .profile-name {
     font-size: 5vw;
   }
-
-
 }

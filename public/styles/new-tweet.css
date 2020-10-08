@@ -38,12 +38,12 @@ span {
 }
 
 button {
-  /* Color */
-  background-color: #4056A1;
-  color: #ffffff;
   /* Text */
   font-family: 'Bungee', sans-serif;
   font-size: 20px;
+  /* Color */
+  background-color: #4056A1;
+  color: #ffffff;
   /* Display */
   text-align: center;
   text-decoration: none;
@@ -65,13 +65,16 @@ button {
 }
 
 .error-message {
-  display: none;
-  justify-content: center;
+  /* Text */
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
   font-weight: bold;
-  color: red;
-  border: 2px solid red;
+  /* Color */
+  color: #ff0000;
+  /* Display */
+  display: none;
+  justify-content: center;
+  border: 2px solid #ff0000;
   margin: 16px;
   padding: 5px;
   align-items: center;

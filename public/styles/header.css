@@ -1,25 +1,17 @@
 .profile {
+  /* Color */
+  background-color: #a4acc7;
+  background-image: url("https://transparenttextures.com/patterns/45-degree-fabric-light.png");
   /* Display */
   padding-top: 10px;
   height: 100%;
   width: 100%;
   margin-bottom: 2em;
-
   text-align: center;
-  /* Color */
-  background-color: #a4acc7;
-  background-image: url("https://transparenttextures.com/patterns/45-degree-fabric-light.png");
-}
-/* 
-.profile-name {
-  margin-top: 0;
 }
 
-.avatar {
-  margin-bottom: 2em;
-} */
-
 .profile-name {
-justify-content: center;
-padding-bottom: 20px;
+  /* Display */
+  justify-content: center;
+  padding-bottom: 20px;
 }

@@ -10,10 +10,4 @@ $(document).ready(function() {
       $('.counter').css("color", "#545149");
     }
   });
-  // $(this).nextAll('span').text(counter - length);
-  // if (counter < length) {
-  //   $(this).nextAll('span').css("color", "#FF0000")
-  // } else {
-  //   $(this).nextAll('span').css("color", "#545149");
-  // }
 });
