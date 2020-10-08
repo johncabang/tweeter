@@ -10,33 +10,33 @@ $(document).ready(function() {
 
   // Fake data taken from initial-tweets.json
 
-const tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
+  // const tweetData = [
+  //   {
+  //     "user": {
+  //       "name": "Newton",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png"
+  //       ,
+  //       "handle": "@SirIsaac"
+  //     },
+  //     "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //     "created_at": 1461116232227
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Descartes",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@rd" },
+  //     "content": {
+  //       "text": "Je pense , donc je suis"
+  //     },
+  //     "created_at": 1461113959088
+  //   }
+  // ]
 
 
-// Take in array of tweet objects of (tweetData), and insert it in #tweets-container inside the <section> HTML element
+  // Take in array of tweet objects of (tweetData), and insert it in #tweets-container inside the <section> HTML element
 
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
@@ -47,7 +47,7 @@ const tweetData = [
   };
 
 
-// Take in a tweet object, return a tweet <article> element containing HTML structure of the tweet
+  // Take in a tweet object, return a tweet <article> element containing HTML structure of the tweet
 
   const createTweetElement = function(tweetData) {
     let $tweet = $(`
@@ -75,24 +75,46 @@ const tweetData = [
     return $tweet;
   };
 
-  renderTweets(tweetData);
+  // renderTweets(tweetData);
   
   
   // Submit form using AJAX
 
   $('form').on('submit', function(event) {
     event.preventDefault(); // Stops the default action of the element 'submit'
-  
-    $.ajax({ 
+    const data = $(this).serialize(); // Turns the form data into a query string
+    const tweetData = $('#textarea-tweet').val();
+    
+    if (tweetData.length === 0) {
+      alert('Empty tweet...');
+    } else if (tweetData.length > 140) {
+      alert('Your tweet is too long!');
+    } else {
+    $.ajax({
       url: '/tweets/',
-      method: 'POST', 
-      data: $(this).serialize() // Turns the form data into a query string
+      method: 'POST',
+      data
     })
-    .then(function() {
-      console.log('Success');
-    });
+      .then(function() {
+        console.log('Success');
+      });
+    }
+  });
 
-  })
+
+// Function responsible for loading/fetching tweets from /tweets/ page
+
+  const loadTweets = function() {
+    $.ajax('/tweets/', {
+      method: 'GET',
+    })
+      .then(function(twts) {
+        renderTweets(twts);
+        console.log('loadTweets!');
+      });
+  };
+
+  loadTweets();
 
 
 
