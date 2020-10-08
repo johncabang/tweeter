@@ -15,3 +15,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Demo
+
+!["Tweeter Demo"](https://github.com/johncabang/tweeter/blob/master/docs/tweeter-demo.gif?raw=true)
+
+!["Tweeter compose"](https://github.com/johncabang/tweeter/blob/master/docs/tweeter-compose.png?raw=true)
+
+!["Tweeter mobile"](https://github.com/johncabang/tweeter/blob/master/docs/tweeter-mobile.png?raw=true)
