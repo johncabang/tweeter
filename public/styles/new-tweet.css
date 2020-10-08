@@ -2,7 +2,8 @@
   /* Display */
   padding-top: 1em;
   /* Text */
-  font-family: 'Bungee', sans-serif;
+  /* font-family: 'Bungee', sans-serif; */
+  display: none;
 }
 
 .label-tweet {
@@ -25,7 +26,7 @@ textarea {
   outline: none;
   border: none;
   resize: none;
-  margin-top: 1em;
+  margin-top: 8px;
   border-bottom: solid 4px #545149;
   padding-top: 1em;
   width: 100%;
@@ -45,6 +46,7 @@ button {
   background-color: #4056A1;
   color: #ffffff;
   /* Text */
+  font-family: 'Bungee', sans-serif;
   font-size: 20px;
   /* Display */
   text-align: center;
@@ -55,3 +57,27 @@ button {
   /* Other */
   cursor: pointer;
 }
+
+.counter {
+  font-family: 'Bungee', sans-serif;
+}
+
+.error-message img {
+  height: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.error-message {
+  display: none;
+  justify-content: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: red;
+  border: 2px solid red;
+  margin: 16px;
+  padding: 5px;
+  align-items: center;
+}
+

@@ -29,7 +29,7 @@ $(document).ready(function() {
       </header class="tweet-head">
       <p>${escape(tweetData.content.text)}</p>
       <footer>
-        <p class="tweeter-days">10 Days Ago</p>
+        <p class="tweeter-days">${new Date(tweetData.created_at).toLocaleString()}</p>
         <div class="tweeter-icons">
           <img src="/images/icons8-flag.png">
           <img src="/images/icons8-like.png">
@@ -77,25 +77,33 @@ $(document).ready(function() {
     const tweetData = $('#textarea-tweet').val();
 
     if (tweetData.length === 0) {
-      alert('Empty tweet, please type in your tweet.');
+      $('.error-message').slideDown('slow', function() {
+        $('.error-message').html(`<img src="/images/icons8-error.png"> Empty tweet?  Please share your thoughts! <img src="/images/icons8-error.png">`);
+      });
     } else if (tweetData.length > 140) {
-      alert('Sorry, maximum character limit exceeded..');
+      $('.error-message').slideDown('slow', function() {
+        $('.error-message').html(`<img src="/images/icons8-error.png"> Sorry, maximum character limit exceeded.. <img src="/images/icons8-error.png">`);
+      });
     } else {
-      
-    $.ajax({
-      url: '/tweets/',
-      method: 'POST',
-      data
-    })
-      .then(function() {
-        console.log('Success');
-        $('#textarea-tweet').val(''); // Clears textarea
-        $('.counter').text(140);      // Resets counter
-        loadTweets();
+      $('.error-message').slideUp('slow');
+      $.ajax({
+        url: '/tweets/',
+        method: 'POST',
+        data
+      })
+        .then(function() {
+          console.log('Success');
+          $('#textarea-tweet').val(''); // Clears textarea
+          $('.counter').text(140);      // Resets counter
+          loadTweets();
+          $('.new-tweet').slideToggle();
       });
     }
   });
 
+  $('.new-tweet-nav').on('click', function() {
+    $('.new-tweet').slideToggle();
+  })
 
 
 });
