@@ -74,8 +74,8 @@ $(document).ready(function() {
   // Compose and submit a tweet less than or equal to 140 characters. Returns an error when more than 140 characters or an empty value
 
   $('form').on('submit', function(event) {
-    event.preventDefault();           // Stops the default action of the element 'submit'
-    const data = $(this).serialize(); // Turns the form data into a query string
+    event.preventDefault();
+    const data = $(this).serialize();
     const tweetData = $('#textarea-tweet').val();
 
     if (tweetData.length === 0) {
@@ -90,9 +90,9 @@ $(document).ready(function() {
         $('.error-message').html(`<img src="/images/icons8-error.png"> Sorry, maximum character limit exceeded. <img src="/images/icons8-error.png">`);
         $('.error-message').delay(4000).slideUp(500);
 
-        $('#textarea-tweet').val('');          // Clears textarea
-        $('.counter').text(140);               // Resets counter
-        $('.counter').css("color", "#545149"); // Returns counter color to default
+        $('#textarea-tweet').val('');
+        $('.counter').text(140);
+        $('.counter').css("color", "#545149");
       });
     } else {
       $('.error-message').slideUp('slow');
@@ -102,8 +102,8 @@ $(document).ready(function() {
         data
       })
         .then(function() {
-          $('#textarea-tweet').val('');   // Clears textarea
-          $('.counter').text(140);        // Resets counter
+          $('#textarea-tweet').val('');
+          $('.counter').text(140);
           loadTweets();
           $('.new-tweet').slideToggle();
         });
